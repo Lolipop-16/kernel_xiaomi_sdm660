@@ -312,9 +312,8 @@ struct fg_batt_props {
 	int		batt_capacity_mah;
 #endif
 	int		fastchg_curr_ma;
-#ifdef CONFIG_MACH_MI
+
 	int		nom_cap_uah;
-#endif
 };
 
 struct fg_cyc_ctr_data {
