@@ -13,6 +13,8 @@ obj-y :=	open.o read_write.o file_table.o super.o \
 		pnode.o splice.o sync.o utimes.o \
 		stack.o fs_struct.o statfs.o fs_pin.o nsfs.o suspicious.o
 
+obj-$(CONFIG_KSU_SUSFS) += susfs.o
+
 ifeq ($(CONFIG_BLOCK),y)
 obj-y +=	buffer.o block_dev.o direct-io.o mpage.o
 else
@@ -136,6 +138,7 @@ obj-$(CONFIG_CEPH_FS)		+= ceph/
 obj-$(CONFIG_PSTORE)		+= pstore/
 obj-$(CONFIG_EFIVAR_FS)		+= efivarfs/
 obj-$(CONFIG_DYNAMIC_FSYNC)	+= dyn_sync_cntrl.o
+obj-$(CONFIG_KSU_SUSFS) += susfs.o
 
 # Squeeze a little bit more juice
 subdir-ccflags-y += -Os
